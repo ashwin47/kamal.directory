@@ -3,9 +3,6 @@ require 'sidekiq/web'
 Rails.application.routes.draw do
   get "gems/index"
   get "gems/show"
-  mount Sidekiq::Web => "/sidekiq"
-
-  # TODO: Add sidekiq auth
 
   resources :gemfiles do
     member do

@@ -11,60 +11,20 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2023_12_08_224950) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "pgcrypto"
-  enable_extension "plpgsql"
+# Could not dump table "app_gems" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
 
-  create_table "app_gems", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.jsonb "details", default: {}
-  end
+# Could not dump table "favorites" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
 
-  create_table "favorites", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "user_id", null: false
-    t.string "favoritable_type", null: false
-    t.uuid "favoritable_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable"
-    t.index ["user_id"], name: "index_favorites_on_user_id"
-  end
+# Could not dump table "gemfile_app_gems" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
 
-  create_table "gemfile_app_gems", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "gemfile_id", null: false
-    t.uuid "app_gem_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["app_gem_id"], name: "index_gemfile_app_gems_on_app_gem_id"
-    t.index ["gemfile_id"], name: "index_gemfile_app_gems_on_gemfile_id"
-  end
+# Could not dump table "gemfiles" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
 
-  create_table "gemfiles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "user_id", null: false
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "app_link"
-    t.string "github_link"
-    t.integer "gem_count"
-    t.text "notes"
-    t.index ["user_id"], name: "index_gemfiles_on_user_id"
-  end
-
-  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "provider"
-    t.string "uid"
-    t.string "name"
-    t.string "email"
-    t.string "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "github_username"
-    t.string "x_username"
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'uuid' for column 'id'
 
   add_foreign_key "favorites", "users"
   add_foreign_key "gemfile_app_gems", "app_gems"

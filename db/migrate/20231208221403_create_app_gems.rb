@@ -1,6 +1,6 @@
-class CreateAppGems < ActiveRecord::Migration[7.2]
+class CreateAppGems < ActiveRecord::Migration[7.1]
   def change
-    create_table :app_gems, id: :uuid do |t|
+    create_table :app_gems do |t|
       t.string :name
 
       t.timestamps

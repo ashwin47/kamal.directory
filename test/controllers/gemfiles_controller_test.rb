@@ -17,7 +17,7 @@ class GemfilesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create gemfile" do
     assert_difference("Gemfile.count") do
-      post gemfiles_url, params: { gemfile: { content: @gemfile.content, user_id: @gemfile.user_id } }
+      post gemfiles_url, params: {gemfile: {content: @gemfile.content, user_id: @gemfile.user_id}}
     end
 
     assert_redirected_to gemfile_url(Gemfile.last)
@@ -34,7 +34,7 @@ class GemfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update gemfile" do
-    patch gemfile_url(@gemfile), params: { gemfile: { content: @gemfile.content, user_id: @gemfile.user_id } }
+    patch gemfile_url(@gemfile), params: {gemfile: {content: @gemfile.content, user_id: @gemfile.user_id}}
     assert_redirected_to gemfile_url(@gemfile)
   end
 

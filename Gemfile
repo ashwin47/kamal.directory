@@ -10,12 +10,12 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
-gem "redis", ">= 4.0.1"
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+# gem "redis", ">= 4.0.1"
+gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
 # Authentication
-gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
+gem "omniauth-github", github: "omniauth/omniauth-github", branch: "master"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 
 # Error reporting
@@ -28,10 +28,11 @@ gem "gems"
 
 # Background jobs
 gem "sidekiq", github: "sidekiq/sidekiq"
-gem 'sidekiq-status'
+gem "sidekiq-status"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ]
+  gem "debug", platforms: %i[mri windows]
+  gem "byebug", "~> 11.1"
 end
 
 group :development do
@@ -48,3 +49,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "litestack", "~> 0.4.2"

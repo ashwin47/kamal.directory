@@ -1,5 +1,5 @@
 class GemfilesController < ApplicationController
-  before_action :set_gemfile, only: %i[ show edit update destroy favorite unfavorite]
+  before_action :set_gemfile, only: %i[show edit update destroy favorite unfavorite]
   before_action :authenticate_user!, only: %i[new create edit update destroy favorite unfavorite]
   before_action :authorize_user!, only: %i[edit update destroy]
 
@@ -26,7 +26,6 @@ class GemfilesController < ApplicationController
     # Parse the contents of the gemfile and create a new AppGem for each gem, or find the existing AppGem if it already exists and associate it with the gemfile
     @gemfile.parse_content
 
-    
     if @gemfile.save!
       redirect_to gemfile_url(@gemfile), notice: "Gemfile was successfully created."
     else
@@ -57,28 +56,29 @@ class GemfilesController < ApplicationController
 
   def favorite
     current_user.favorites.create(favoritable: @gemfile)
-    render partial: 'gemfiles/favorite', locals: { gemfile: @gemfile }
+    render partial: "gemfiles/favorite", locals: {gemfile: @gemfile}
   end
 
   def unfavorite
     current_user.favorites.find_by(favoritable: @gemfile).destroy
-    render partial: 'gemfiles/favorite', locals: { gemfile: @gemfile }
+    render partial: "gemfiles/favorite", locals: {gemfile: @gemfile}
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gemfile
-      @gemfile = Gemfile.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def gemfile_params
-      params.require(:gemfile).permit(:content, :name, :app_link, :github_link, :notes)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_gemfile
+    @gemfile = Gemfile.find(params[:id])
+  end
 
-    def authorize_user!
-      unless @gemfile.user == current_user
-        redirect_to gemfiles_path, alert: 'You are not authorized to perform this action.'
-      end
+  # Only allow a list of trusted parameters through.
+  def gemfile_params
+    params.require(:gemfile).permit(:content, :name, :app_link, :github_link, :notes)
+  end
+
+  def authorize_user!
+    unless @gemfile.user == current_user
+      redirect_to gemfiles_path, alert: "You are not authorized to perform this action."
     end
+  end
 end

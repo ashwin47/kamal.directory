@@ -1,7 +1,7 @@
-class CreateGemfiles < ActiveRecord::Migration[7.2]
+class CreateGemfiles < ActiveRecord::Migration[7.1]
   def change
-    create_table :gemfiles, id: :uuid do |t|
-      t.references :user, null: false, foreign_key: true, type: :uuid
+    create_table :gemfiles do |t|
+      t.references :user, null: false, foreign_key: true
       t.text :content
 
       t.timestamps

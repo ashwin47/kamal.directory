@@ -20,7 +20,6 @@ gem "omniauth-rails_csrf_protection", "~> 1.0"
 # Error reporting
 gem "sentry-ruby"
 gem "sentry-rails"
-gem "sentry-sidekiq"
 
 # Info
 gem "gems"

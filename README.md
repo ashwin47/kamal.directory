@@ -20,7 +20,7 @@ You'll need:
 - GitHub API key (for login)
 
 ```shell
-cd gemfile.directory
+cd kamal.directory
 bundle install
 rails db:setup
 ```

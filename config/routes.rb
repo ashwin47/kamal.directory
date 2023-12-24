@@ -1,15 +1,15 @@
-require "sidekiq/web"
-
 Rails.application.routes.draw do
   get "gems/index"
   get "gems/show"
 
-  resources :gemfiles do
-    member do
-      post "favorite", to: "gemfiles#favorite"
-      delete "unfavorite", to: "gemfiles#unfavorite"
-    end
-  end
+  # resources :kamalfiles do
+  #   member do
+  #     post "favorite", to: "kamalfiles#favorite"
+  #     delete "unfavorite", to: "kamalfiles#unfavorite"
+  #   end
+  # end
+
+  resources :kamalfiles
 
   resources :gems
 
@@ -27,5 +27,5 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", :as => :rails_health_check
 
   # Defines the root path route ("/")
-  root "gemfiles#index"
+  root "kamalfiles#index"
 end

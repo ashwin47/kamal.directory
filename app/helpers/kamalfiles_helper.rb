@@ -1,0 +1,2 @@
+module KamalfilesHelper
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_08_224950) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_23_110328) do
   create_table "app_gems", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -48,6 +48,30 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_08_224950) do
     t.integer "gem_count"
     t.text "notes"
     t.index ["user_id"], name: "index_gemfiles_on_user_id"
+  end
+
+  create_table "kamal_deploys", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "content"
+    t.string "name"
+    t.string "app_link"
+    t.string "github_link"
+    t.integer "accessories_count"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "kamalfiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "content"
+    t.string "name"
+    t.string "app_link"
+    t.string "github_link"
+    t.integer "accessories_count"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

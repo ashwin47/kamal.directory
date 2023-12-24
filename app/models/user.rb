@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :gemfiles
+  has_many :kamalfiles
   has_many :favorites, dependent: :destroy
 
   validates :provider, presence: true

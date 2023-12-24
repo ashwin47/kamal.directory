@@ -1,0 +1,51 @@
+<%
+  title @kamalfile.name
+  header_title @kamalfile.name
+%>
+
+<% header_content do %>
+    <div class="flex">
+      <div>
+        <div class="flex items-center space-x-3">
+          <h1 class="mr-2 text-3xl font-bold tracking-tight text-white">
+            <%= content_for?(:header_title) ? (yield(:header_title)).html_safe : "kamalfile" %>
+          </h1>
+          <% if @kamalfile.app_link.present? %>
+            <%= link_to '<i class="text-xl text-white fa-solid fa-link hover:text-amber-300"></i>'.html_safe, @kamalfile.app_link %>
+          <% end %>
+
+          <% if @kamalfile.github_link.present? %>
+            <%= link_to '<i class="text-xl text-white fa-brands fa-github hover:text-amber-300"></i>'.html_safe, @kamalfile.github_link %>
+          <% end %>
+        </div>
+        <div class="flex items-center text-sm text-white">
+          Submitted by <span class="flex items-center ml-2 space-x-1"><%= image_tag @kamalfile.user.image, class: 'w-4 h-4 rounded-full' %> <b>
+          <% if @kamalfile.user.x_username.present? %>
+            <%= link_to "@#{@kamalfile.user.x_username}", "https://x.com/#{@kamalfile.user.x_username}", class: 'hover:underline' %>
+          <% elsif @kamalfile.user.github_username.present? %>
+            <%= link_to "@#{@kamalfile.user.github_username}", "https://github.com/#{@kamalfile.user.github_username}", class: 'hover:underline' %>
+          <% else %>
+            <%= @kamalfile.user.name %>
+          <% end %>
+          </b></span>
+        </div>
+        <% if @kamalfile.notes.present? %>
+          <p class="mt-3 text-xs italic text-white"><%= @kamalfile.notes %></p>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+
+<% header_action do %>
+  <div class="flex items-center mt-3 space-x-3 sm:mt-0 sm:ml-4">
+    <%= render partial: 'favorite', locals: {kamalfile: @kamalfile} %>
+    <% if current_user == @kamalfile.user  %>
+      <%= link_to "Edit", edit_kamalfile_path(@kamalfile), class: "rounded-lg py-3 px-5 bg-white font-medium" %>
+      <%= button_to "Destroy", kamalfile_path(@kamalfile), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove this kamalfile?" }, class: "rounded-lg py-3 px-5 bg-white font-medium" %>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="flex w-full">
+  <%= render @kamalfile %>
+</div>

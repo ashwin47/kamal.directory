@@ -2,14 +2,12 @@ Rails.application.routes.draw do
   get "gems/index"
   get "gems/show"
 
-  # resources :kamalfiles do
-  #   member do
-  #     post "favorite", to: "kamalfiles#favorite"
-  #     delete "unfavorite", to: "kamalfiles#unfavorite"
-  #   end
-  # end
-
-  resources :kamalfiles
+  resources :kamalfiles do
+    member do
+      post "favorite", to: "kamalfiles#favorite"
+      delete "unfavorite", to: "kamalfiles#unfavorite"
+    end
+  end
 
   resources :gems
 

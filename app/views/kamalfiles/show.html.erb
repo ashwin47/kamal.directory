@@ -11,11 +11,11 @@
             <%= content_for?(:header_title) ? (yield(:header_title)).html_safe : "kamalfile" %>
           </h1>
           <% if @kamalfile.app_link.present? %>
-            <%= link_to '<i class="text-xl text-white fa-solid fa-link hover:text-amber-300"></i>'.html_safe, @kamalfile.app_link %>
+            <%= link_to '<i class="text-xl text-white fa-solid fa-link hover:text-blue-500"></i>'.html_safe, @kamalfile.app_link %>
           <% end %>
 
           <% if @kamalfile.github_link.present? %>
-            <%= link_to '<i class="text-xl text-white fa-brands fa-github hover:text-amber-300"></i>'.html_safe, @kamalfile.github_link %>
+            <%= link_to '<i class="text-xl text-white fa-brands fa-github hover:text-blue-500"></i>'.html_safe, @kamalfile.github_link %>
           <% end %>
         </div>
         <div class="flex items-center text-sm text-white">

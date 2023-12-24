@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
   def index
-    @results = Gemfile.with_favorites.search(params[:query])
+    @results = Kamalfile.with_favorites.search(params[:query])
   end
 end

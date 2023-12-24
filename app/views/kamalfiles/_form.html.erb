@@ -1,5 +1,15 @@
 <%= form_with(model: kamalfile, class: "contents") do |form| %>
-
+  <% if kamalfile.errors.any? %>
+    <div id="error_explanation" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+      <strong class="font-bold">Oops!</strong>
+      <span class="block sm:inline"><%= pluralize(kamalfile.errors.count, "error") %> prohibited this kamalfile from being saved:</span>
+      <ul class="list-disc pl-5 mt-3">
+        <% kamalfile.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="my-6">
     <%= form.label :name %>
     <p class="mt-1 text-xs text-neutral-500">The name of your app/site.</p>
@@ -31,6 +41,6 @@
   </div>
 
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-amber-300 hover:bg-amber-400 text-black inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-500 hover:bg-amber-400 text-black inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>

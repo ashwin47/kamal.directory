@@ -27,15 +27,14 @@
     </div>
   </div>
   <div class="text-right">
-    <%
-=begin%>
- <div>
-      <b><%= kamalfile.gem_count %></b> <%= 'gem'.pluralize(kamalfile.gem_count) %>
+    <div>
+      <b><%= kamalfile.server_count %></b> <%= 'server'.pluralize(kamalfile.server_count) %>
+    </div>
+    <div>
+      <b><%= kamalfile.server_count %></b> <%= 'accessory'.pluralize(kamalfile.accessory_count) %>
     </div>
     <div>
       <b><%= kamalfile.favorites_count %></b> <%= 'favorite'.pluralize(kamalfile.favorites_count) %>
-    </div> 
-<%
-=end%>
+    </div>
   </div>
 </li>

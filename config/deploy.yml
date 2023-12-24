@@ -41,6 +41,10 @@ env:
 #   remote:
 #     arch: amd64
 #     host: ssh://app@192.168.0.1
+builder:
+  cache:
+    type: registry
+    options: mode=max,image-manifest=true,oci-mediatypes=true
 
 # Use accessory services (secrets come from .env).
 # accessories:

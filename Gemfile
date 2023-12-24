@@ -26,10 +26,6 @@ gem "sentry-sidekiq"
 # Info
 gem "gems"
 
-# Background jobs
-gem "sidekiq", github: "sidekiq/sidekiq"
-gem "sidekiq-status"
-
 group :development, :test do
   gem "debug", platforms: %i[mri windows]
   gem "byebug", "~> 11.1"

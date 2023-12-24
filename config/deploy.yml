@@ -1,8 +1,8 @@
 # Name of your application. Used to uniquely configure containers.
-service: my-app
+service: kamal-directory
 
 # Name of the container image.
-image: user/my-app
+image: ashwinmk2016/kamal-directory
 
 # Deploy to these servers.
 servers:
@@ -12,7 +12,7 @@ servers:
 registry:
   # Specify the registry server, if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
-  username: my-user
+  username: ashwinmk2016
 
   # Always use an access token rather than real password when possible.
   password:
@@ -41,28 +41,29 @@ registry:
 #     host: ssh://app@192.168.0.1
 
 # Use accessory services (secrets come from .env).
-accessories:
-  db:
-    image: mysql:8.0
-    host: 192.168.0.2
-    port: 3306
-    env:
-      clear:
-        MYSQL_ROOT_HOST: '%'
-      secret:
-        - MYSQL_ROOT_PASSWORD
-    files:
-      - config/mysql/production.cnf:/etc/mysql/my.cnf
-      - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-    directories:
-      - data:/var/lib/mysql
-  redis:
-    image: redis:7.0
-    host: 192.168.0.2
-    port: 6379
-    directories:
-      - data:/data
-
+# accessories:
+#   db:
+#     image: mysql:8.0
+#     host: 192.168.0.2
+#     port: 3306
+#     env:
+#       clear:
+#         MYSQL_ROOT_HOST: '%'
+#       secret:
+#         - MYSQL_ROOT_PASSWORD
+#     files:
+#       - config/mysql/production.cnf:/etc/mysql/my.cnf
+#       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
+#     directories:
+#       - data:/var/lib/mysql
+#   redis:
+#     image: redis:7.0
+#     host: 192.168.0.2
+#     port: 6379
+#     directories:
+#       - data:/data
+volumes:
+  - "storage:/rails/storage"
 # Configure custom arguments for Traefik
 # traefik:
 #   args:

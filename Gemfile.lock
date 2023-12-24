@@ -264,8 +264,6 @@ GEM
       ffi (~> 1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
-    redis (5.0.8)
-      redis-client (>= 0.17.0)
     redis-client (0.19.1)
       connection_pool
     regexp_parser (2.8.3)
@@ -347,7 +345,6 @@ DEPENDENCIES
   propshaft (~> 0.8.0)
   puma (>= 6.4)
   rails (~> 7.1.2)
-  redis (~> 5.0)
   selenium-webdriver
   sentry-rails
   sentry-ruby

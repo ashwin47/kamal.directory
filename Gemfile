@@ -10,7 +10,6 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "tailwindcss-rails"
-# gem "redis", ">= 4.0.1"
 gem "tzinfo-data", platforms: %i[windows jruby]
 gem "bootsnap", require: false
 
@@ -47,3 +46,5 @@ group :test do
 end
 
 gem "litestack", "~> 0.4.2"
+
+gem "dockerfile-rails", ">= 1.6", :group => :development

@@ -6,7 +6,7 @@ image: ashwinmk2016/kamal-directory
 
 # Deploy to these servers.
 servers:
-  - 146.190.159.94
+  - 164.92.71.135
 
 # Credentials for your image host.
 registry:

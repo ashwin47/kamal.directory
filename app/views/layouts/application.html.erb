@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html class="h-full bg-gray-100">
   <head>
-    <title><%= content_for?(:title) ? ("#{yield(:title)} - gemfile.directory").html_safe : "gemfile.directory — view gemfiles of your favorite rails apps" %></title>
+    <title><%= content_for?(:title) ? ("#{yield(:title)} - kamal.directory").html_safe : "kamal.directory — A list of kamal config files for your next deploy !" %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <meta name="title" content="<%= content_for?(:title) ? ("#{yield(:title)} - gemfile.directory").html_safe : "gemfile.directory" %>">
-    <meta name="description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Rails Gemfiles for inspiration and learning!" %>">
+    <meta name="title" content="<%= content_for?(:title) ? ("#{yield(:title)} - kamal.directory").html_safe : "kamal.directory" %>">
+    <meta name="description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Kamal configs for inspiration and learning!" %>">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="<%= content_for?(:title) ? ("#{yield(:title)} - gemfile.directory").html_safe : "gemfile.directory" %>">
-    <meta property="og:description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Rails Gemfiles for inspiration and learning!" %>">
+    <meta property="og:title" content="<%= content_for?(:title) ? ("#{yield(:title)} - kamal.directory").html_safe : "kamal.directory" %>">
+    <meta property="og:description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Kamal configs for inspiration and learning!" %>">
     <meta property="og:image" content="<%= image_url(content_for?(:meta_image) ? yield(:meta_image) : "meta.png") %>">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<%= content_for?(:title) ? ("#{yield(:title)} - gemfile.directory").html_safe : "gemfile.directory" %>">
-    <meta name="twitter:description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Rails Gemfiles for inspiration and learning!" %>">
+    <meta name="twitter:title" content="<%= content_for?(:title) ? ("#{yield(:title)} - kamal.directory").html_safe : "kamal.directory" %>">
+    <meta name="twitter:description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Kamal filess for inspiration and learning!" %>">
     <meta name="twitter:image" content="<%= image_url(content_for?(:meta_image) ? yield(:meta_image) : "meta.png") %>">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
@@ -166,7 +166,7 @@
         <header class="py-10">
           <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="sm:flex sm:items-center sm:justify-between">
-              <%= content_for?(:header_content) ? (yield(:header_content)).html_safe : "<h1 class='flex-1 text-3xl font-bold tracking-tight text-white'>#{content_for?(:header_title) ? (yield(:header_title)).html_safe : "Latest Gemfiles"}</h1>".html_safe %>
+              <%= content_for?(:header_content) ? (yield(:header_content)).html_safe : "<h1 class='flex-1 text-3xl font-bold tracking-tight text-white'>#{content_for?(:header_title) ? (yield(:header_title)).html_safe : "Latest kamal Config files"}</h1>".html_safe %>
               <%= content_for?(:header_action) ? (yield(:header_action)).html_safe : "" %>
             </div>
           </div>

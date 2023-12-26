@@ -15,7 +15,8 @@ gem "bootsnap", require: false
 
 # Authentication
 gem "omniauth-github", github: "omniauth/omniauth-github", branch: "master"
-gem "omniauth-rails_csrf_protection", github: "cookpad/omniauth-rails_csrf_protection", branch: "params-debug"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem 'rack', '~> 2.2.8'
 
 # Error reporting
 gem "sentry-ruby"

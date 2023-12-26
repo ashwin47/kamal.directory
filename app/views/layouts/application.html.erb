@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-full bg-gray-100">
   <head>
-    <title><%= content_for?(:title) ? ("#{yield(:title)} - kamal.directory").html_safe : "kamal.directory — A list of kamal config files for your next deploy !" %></title>
+    <title><%= content_for?(:title) ? ("#{yield(:title)} - kamal.directory").html_safe : "kamal.directory — A directory of kamal config files for inspiration and learning!" %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <meta name="title" content="<%= content_for?(:title) ? ("#{yield(:title)} - kamal.directory").html_safe : "kamal.directory" %>">
@@ -10,13 +10,13 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="<%= content_for?(:title) ? ("#{yield(:title)} - kamal.directory").html_safe : "kamal.directory" %>">
-    <meta property="og:description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Kamal configs for inspiration and learning!" %>">
+    <meta property="og:description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Kamal config files for inspiration and learning!" %>">
     <meta property="og:image" content="<%= image_url(content_for?(:meta_image) ? yield(:meta_image) : "meta.png") %>">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<%= content_for?(:title) ? ("#{yield(:title)} - kamal.directory").html_safe : "kamal.directory" %>">
-    <meta name="twitter:description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Kamal filess for inspiration and learning!" %>">
+    <meta name="twitter:description" content="<%= content_for?(:description) ? (yield(:description)) : "A directory of Kamal files for inspiration and learning!" %>">
     <meta name="twitter:image" content="<%= image_url(content_for?(:meta_image) ? yield(:meta_image) : "meta.png") %>">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">

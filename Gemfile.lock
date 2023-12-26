@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/cookpad/omniauth-rails_csrf_protection.git
+  revision: 40540abb4265b762a99740c9ffebd41e6fd7b818
+  branch: params-debug
+  specs:
+    omniauth-rails_csrf_protection (1.0.1)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
+
+GIT
   remote: https://github.com/omniauth/omniauth-github.git
   revision: f27bb4e018150d87e9444ad13955acfc9e76f4d7
   branch: master
@@ -207,9 +216,6 @@ GEM
     omniauth-oauth2 (1.8.0)
       oauth2 (>= 1.4, < 3)
       omniauth (~> 2.0)
-    omniauth-rails_csrf_protection (1.0.1)
-      actionpack (>= 4.2)
-      omniauth (~> 2.0)
     propshaft (0.8.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -337,7 +343,7 @@ DEPENDENCIES
   importmap-rails
   litestack (~> 0.4.2)
   omniauth-github!
-  omniauth-rails_csrf_protection (~> 1.0)
+  omniauth-rails_csrf_protection!
   propshaft (~> 0.8.0)
   puma (>= 6.4)
   rails (~> 7.1.2)

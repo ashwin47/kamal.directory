@@ -35,6 +35,7 @@ env:
     - RAILS_MASTER_KEY
     - GITHUB_CLIENT_ID
     - GITHUB_SECRET
+    - GOOGLE_ANALYTICS_ID
 volumes:
   - "storage:/rails/storage"
   

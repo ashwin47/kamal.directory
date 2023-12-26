@@ -9,12 +9,12 @@ servers:
   web:
     hosts:
       - 164.92.71.135
-    # labels:
-    #   traefik.http.routers.hey-web.rule: Host(`kamal.directory`)
-    #   traefik.http.routers.hey-web_secure.entrypoints: websecure
-    #   traefik.http.routers.hey-web_secure.rule: Host(`kamal.directory`)
-    #   traefik.http.routers.hey-web_secure.tls: true
-    #   traefik.http.routers.hey-web_secure.tls.certresolver: letsencrypt
+    labels:
+      traefik.http.routers.hey-web.rule: Host(`kamal.directory`)
+      traefik.http.routers.hey-web_secure.entrypoints: websecure
+      traefik.http.routers.hey-web_secure.rule: Host(`kamal.directory`)
+      traefik.http.routers.hey-web_secure.tls: true
+      traefik.http.routers.hey-web_secure.tls.certresolver: letsencrypt
 
 # Credentials for your image host.
 registry:
@@ -67,24 +67,24 @@ builder:
 #       - data:/data
 
 # Configure custom arguments for Traefik
-# traefik:
-#   options:
-#     publish:
-#       - "443:443"
-#     volume:
-#       - "/letsencrypt/acme.json:/letsencrypt/acme.json"
-#   args:
-#     accesslog: true
-#     accesslog.format: json
-#     entryPoints.web.address: ":80"
-#     entryPoints.websecure.address: ":443"
-#     entryPoints.web.http.redirections.entryPoint.to: websecure
-#     entryPoints.web.http.redirections.entryPoint.scheme: https
-#     entryPoints.web.http.redirections.entrypoint.permanent: true
-#     certificatesResolvers.letsencrypt.acme.email: "ashwin@superforum.io"
-#     certificatesResolvers.letsencrypt.acme.storage: "/letsencrypt/acme.json"
-#     certificatesResolvers.letsencrypt.acme.httpchallenge: true
-#     certificatesResolvers.letsencrypt.acme.httpchallenge.entrypoint: web
+traefik:
+  options:
+    publish:
+      - "443:443"
+    volume:
+      - "/letsencrypt/acme.json:/letsencrypt/acme.json"
+  args:
+    accesslog: true
+    accesslog.format: json
+    entryPoints.web.address: ":80"
+    entryPoints.websecure.address: ":443"
+    entryPoints.web.http.redirections.entryPoint.to: websecure
+    entryPoints.web.http.redirections.entryPoint.scheme: https
+    entryPoints.web.http.redirections.entrypoint.permanent: true
+    certificatesResolvers.letsencrypt.acme.email: "ashwin@superforum.io"
+    certificatesResolvers.letsencrypt.acme.storage: "/letsencrypt/acme.json"
+    certificatesResolvers.letsencrypt.acme.httpchallenge: true
+    certificatesResolvers.letsencrypt.acme.httpchallenge.entrypoint: web
 
 # Configure a custom healthcheck (default is /up on port 3000)
 # healthcheck:

@@ -340,6 +340,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection (~> 1.0)
   propshaft (~> 0.8.0)
   puma (>= 6.4)
+  rack (~> 2.2.8)
   rails (~> 7.1.2)
   selenium-webdriver
   sentry-rails

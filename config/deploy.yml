@@ -11,11 +11,11 @@ servers:
       - 164.92.71.135
     labels:
       traefik.http.routers.hey-web.rule: Host(`kamal.directory`)
-      traefik.http.routers.hey-web.entrypoints: websecure
-      traefik.http.routers.hey-web.rule: Host(`kamal.directory`)
-      traefik.http.routers.hey-web.tls: true
-      traefik.http.routers.hey-web.tls.certresolver: letsencrypt
-
+      traefik.http.routers.hey-web_secure.entrypoints: websecure
+      traefik.http.routers.hey-web_secure.rule: Host(`kamal.directory`)
+      traefik.http.routers.hey-web_secure.tls: true
+      traefik.http.routers.hey-web_secure.tls.certresolver: letsencrypt
+      
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub

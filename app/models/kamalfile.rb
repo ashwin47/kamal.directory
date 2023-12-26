@@ -29,7 +29,7 @@ class Kamalfile < ApplicationRecord
   end
 
   def count_accessories
-    YAML.load(content)["accessories"].count
+    YAML.load(content)["accessories"].present? ? YAML.load(content)["accessories"].count : 0
   end
 
   private

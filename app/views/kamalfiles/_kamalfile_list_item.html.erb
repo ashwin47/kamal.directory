@@ -2,7 +2,9 @@
   <div>
     <p class="font-semibold leading-6 text-gray-900 text-md">
       <%= link_to kamalfile_path(kamalfile), class: 'hover:underline flex items-center' do %>
-        <%= image_tag "https://icons.duckduckgo.com/ip3/#{URI.parse(kamalfile.app_link).host}.ico", class: 'mr-2 w-6 h-6 rounded-md' %>
+        <%= image_tag "https://icons.duckduckgo.com/ip3/#{URI.parse(kamalfile.app_link).host}.ico",
+                      class: 'mr-2 w-6 h-6 rounded-md',
+                      onerror: "this.onerror=null;this.src='https://icons.duckduckgo.com/ip3/localhost.ico';" %>
         <span><%= kamalfile.name %></span>
       <% end %>
     </p>

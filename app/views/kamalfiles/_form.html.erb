@@ -11,9 +11,9 @@
     </div>
   <% end %>
   <div class="my-6">
-    <%= form.label :name %>
-    <p class="mt-1 text-xs text-neutral-500">The name of your app/site.</p>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-neutral-200 outline-none px-3 py-2 mt-2 w-full placeholder-neutral-400", autocomplete: "off", placeholder: 'Shopify', required: true %>
+    <%= form.label :title %>
+    <p class="mt-1 text-xs text-neutral-500">Describing the app config</p>
+    <%= form.text_field :name, class: "block shadow rounded-md border border-neutral-200 outline-none px-3 py-2 mt-2 w-full placeholder-neutral-400", autocomplete: "off", placeholder: 'Shopify : Rails app with postgres and redis', required: true %>
   </div>
 
   <div class="my-6">

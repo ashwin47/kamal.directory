@@ -1,4 +1,4 @@
-<div class="<%= 'grid grid-cols-1 lg:grid-cols-3 gap-4' unless @kamalfile.notes.present? %>">
+<div>
   <h3 class="font-bold text-md pb-2">Kamal <i>deploy.yml</i></h3>
   <div id="<%= dom_id kamalfile %>" class="col-span-1 lg:col-span-2">    
     <pre data-controller="linker"><code class="rounded-lg language-ruby"><%= kamalfile.content %></code></pre>

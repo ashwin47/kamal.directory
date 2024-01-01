@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "articles", to: "articles#index"
   get "gems/index"
   get "gems/show"
 

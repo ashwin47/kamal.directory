@@ -1,4 +1,4 @@
-<%= form_with(model: kamalfile, class: "contents") do |form| %>
+<%= form_with(model: kamalfile, class: "contents", data: { controller: "reveal", "reveal-hidden-class": "hidden" }) do |form| %>
   <% if kamalfile.errors.any? %>
     <div id="error_explanation" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
       <strong class="font-bold">Oops!</strong>
@@ -38,6 +38,26 @@
     <%= form.label :notes, 'Explanation' %>
     <p class="mt-1 text-xs text-neutral-500">Add additional context or information.</p>
     <%= form.text_area :notes, rows: 8, class: "block shadow rounded-md border border-neutral-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-6">
+    <%= form.label :dockerfile, 'Add dockerfile', class: "cursor-pointer", data: { action: "click->reveal#toggle"} do %>
+    Add dockerfile <i class="fa-solid fa-expand"></i>
+    <% end %>
+    <div class="hidden" data-reveal-target="item">
+      <p class="mt-1 text-xs text-neutral-500">Add dockerfile (optional)</p>
+      <%= form.text_area :dockerfile, rows: 15, class: "block shadow rounded-md border border-neutral-200 outline-none px-3 py-2 mt-2 w-full"%>
+    </div>
+  </div>
+
+  <div class="my-6">
+    <%= form.label :env, 'Add env file', class: "cursor-pointer", data: { action: "click->reveal#show" } do %>
+      Add env file example <i class="fa-solid fa-expand"></i>
+    <% end %>
+    <div class="hidden" data-reveal-target="item">
+      <p class="mt-1 text-xs text-neutral-500">Add .env.example (optional)</p>
+      <%= form.text_area :env, rows: 10, class: "block shadow rounded-md border border-neutral-200 outline-none px-3 py-2 mt-2 w-full"%>
+    </div>
   </div>
 
   <div class="inline">

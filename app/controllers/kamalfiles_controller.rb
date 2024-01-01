@@ -63,7 +63,7 @@ class KamalfilesController < ApplicationController
   end
 
   def kamalfile_params
-    params.require(:kamalfile).permit(:name, :content, :app_link, :github_link, :notes)
+    params.require(:kamalfile).permit(:name, :content, :app_link, :github_link, :notes, :env, :dockerfile)
   end
 
   def authorize_user!

@@ -1,5 +1,7 @@
 # Kamal.directory
 
+![screencapture](https://github.com/ashwin47/kamal.directory/blob/main/public/screencapture-kamal-directory-2024-04-18-20_21_15.png)
+
 [kamal.directory](https://kamal.directory) is a directory of [kamal](https://kamal-deploy.org/) deploy.yml config files that are used in your Ruby and Rails projects!
 
 Made by [@ashwinm](https://twitter.com/ashwinm).

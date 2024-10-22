@@ -2,9 +2,9 @@ source "https://rubygems.org"
 
 ruby "3.3.0"
 
-gem "rails", "~> 7.2.1"
+gem "rails", "~> 8.0.0.rc1"
 gem "propshaft", "~> 0.8.0"
-gem "sqlite3", "~> 1.4"
+gem "sqlite3", "~> 2.1"
 gem "puma", ">= 6.4"
 gem "importmap-rails"
 gem "turbo-rails"

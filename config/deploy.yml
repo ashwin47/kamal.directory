@@ -27,6 +27,11 @@ env:
 volumes:
   - "storage:/rails/storage"
   
+aliases:
+  shell: app exec --interactive --reuse "bash"
+  console: app exec -r -i "bin/rails console"
+  about: app exec -r -i "bin/rails about"
+  
 builder:
   arch:
     - amd64

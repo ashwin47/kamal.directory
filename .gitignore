@@ -43,3 +43,4 @@
 /db/**/*.sqlite3
 /db/**/*.sqlite3-*
 .byebug_history
+/node_modules

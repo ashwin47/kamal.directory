@@ -1,5 +1,6 @@
 require_relative "boot"
 
+require "rails"
 # Pick the frameworks you want:
 require "active_model/railtie"
 require "active_job/railtie"
@@ -34,9 +35,5 @@ module KamalDirectory
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-
-    # config.active_job.queue_adapter = :active_Job
-
-    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end

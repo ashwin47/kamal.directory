@@ -11,7 +11,7 @@ WORKDIR /rails
 ENV BUNDLE_DEPLOYMENT="1" \
   BUNDLE_PATH="/usr/local/bundle" \
   BUNDLE_WITHOUT="development:test" \
-  LITESTACK_DATA_PATH="/data" \
+  LITESTACK_DATA_PATH="/storage" \
   RAILS_ENV="production"
 
 # Update gems and bundler

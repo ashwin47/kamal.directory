@@ -44,3 +44,4 @@
 /db/**/*.sqlite3-*
 .byebug_history
 /node_modules
+.kamal/secrets

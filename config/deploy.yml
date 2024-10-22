@@ -1,33 +1,21 @@
-# Name of your application. Used to uniquely configure containers.
 service: kamal-directory
-
-# Name of the container image.
 image: ashwinmk2016/kamal-directory
 
-# Deploy to these servers.
 servers:
   web:
     hosts:
       - 5.161.126.59
-    # labels:
-    #   traefik.http.routers.hey-web.rule: Host(`kamal.directory`)
-    #   traefik.http.routers.hey-web_secure.entrypoints: websecure
-    #   traefik.http.routers.hey-web_secure.rule: Host(`kamal.directory`)
-    #   traefik.http.routers.hey-web_secure.tls: true
-    #   traefik.http.routers.hey-web_secure.tls.certresolver: letsencrypt
 
-# Credentials for your image host.
+proxy:
+  ssl: true
+  host: kamal.directory
+  app_port: 3000
+
 registry:
-  # Specify the registry server, if you're not using Docker Hub
-  # server: registry.digitalocean.com / ghcr.io / ...
   username: ashwinmk2016
-
-  # Always use an access token rather than real password when possible.
   password:
     - KAMAL_REGISTRY_PASSWORD
 
-# Inject ENV variables into containers (secrets come from .env).
-# Remember to run `kamal env push` after making changes!
 env:
   clear:
     RUBY_YJIT_ENABLE: 1
@@ -40,52 +28,9 @@ volumes:
   - "storage:/rails/storage"
   
 builder:
+  arch:
+    - amd64
   cache:
     type: registry
-    options: mode=max,image-manifest=true,oci-mediatypes=true
-
-# Use accessory services (secrets come from .env).
-# accessories:
-#   db:
-#     image: mysql:8.0
-#     host: 192.168.0.2
-#     port: 3306
-#     env:
-#       clear:
-#         MYSQL_ROOT_HOST: '%'
-#       secret:
-#         - MYSQL_ROOT_PASSWORD
-#     files:
-#       - config/mysql/production.cnf:/etc/mysql/my.cnf
-#       - db/production.sql:/docker-entrypoint-initdb.d/setup.sql
-#     directories:
-#       - data:/var/lib/mysql
-#   redis:
-#     image: redis:7.0
-#     host: 192.168.0.2
-#     port: 6379
-#     directories:
-#       - data:/data
-
-# Configure custom arguments for Traefik
-# traefik:
-#   options:
-#     publish:
-#       - "443:443"
-#     volume:
-#       - "/letsencrypt/acme.json:/letsencrypt/acme.json"
-#   args:
-#     entryPoints.web.address: ":80"
-#     entryPoints.websecure.address: ":443"
-#     entryPoints.web.http.redirections.entryPoint.to: websecure
-#     entryPoints.web.http.redirections.entryPoint.scheme: https
-#     entryPoints.web.http.redirections.entrypoint.permanent: true
-#     certificatesResolvers.letsencrypt.acme.email: "ashwin@superforum.io"
-#     certificatesResolvers.letsencrypt.acme.storage: "/letsencrypt/acme.json"
-#     certificatesResolvers.letsencrypt.acme.httpchallenge: true
-#     certificatesResolvers.letsencrypt.acme.httpchallenge.entrypoint: web
-
-# Configure a custom healthcheck (default is /up on port 3000)
-# healthcheck:
-#   path: /healthz
-#   port: 4000
+    options: mode=max
+    image: kamal-app-build-cache

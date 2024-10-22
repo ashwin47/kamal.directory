@@ -1,11 +1,13 @@
 development:
-  adapter: litecable
+  adapter: async
 
 test:
-  adapter: test
+  adapter: async
 
 staging:
-  adapter: litecable
+  adapter: async
 
 production:
-  adapter: litecable
+  adapter: redis
+  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
+  channel_prefix: test_kamal_production

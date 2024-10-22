@@ -12,8 +12,6 @@ This project is a fork of [@Shpigford](https://twitter.com/Shpigford)'s [gemfile
 
 The codebase is vanilla Rails and Sqlite3. Quite a simple setup. Its running on a $4 digital ocean droplet!.
 
-But, I would like to introduce features using [litestack](https://github.com/oldmoe/litestack)
-
 ## Setup
 
 You'll need:

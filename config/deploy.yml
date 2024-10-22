@@ -30,7 +30,3 @@ volumes:
 builder:
   arch:
     - amd64
-  cache:
-    type: registry
-    options: mode=max
-    image: kamal-app-build-cache
